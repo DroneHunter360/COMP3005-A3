@@ -13,6 +13,7 @@ def getAllStudents():
     cursor.execute(query)
 
     rows = cursor.fetchall()
+    print("(student_id, first_name, last_name, email, enrollment_date)")
     for row in rows:
         print(row)
 
