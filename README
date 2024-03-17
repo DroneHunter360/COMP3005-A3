@@ -1,11 +1,23 @@
-Steven Hua
-101224771
-COMP 3005 B - Assignment 3 (Q1)
+### Steven Hua
+### 101224771
+### COMP 3005 B - Assignment 3 (Q1)
 
-Setup Instructions -
-1. Install psycopg2 if not already installed using the command 'pip install psycopg2'
-2. Open main.py and modify the parameters as needed that will be used for connecting to the database
-    - The variables can be found on lines 4 - 8
-    - Parameters: dbname, user, password, host, port
-3. Run the program by executing main.py using the command 'python3 main.py'
-4. You will be prompted with several options to choose from to interact with the database
+### Database Setup Instructions -
+### 1. Open PgAdmin
+### 2. Within the Object Explorer view, navigate to Servers -> PostgreSQL [version] -> Databases
+### 3. Right-click Databases and select Create -> Database
+### 4. Name your database
+### 5. Click Save
+### Note: While you can setup and initialize the students table within Pgadmin's Query Tool (using the DDL.sql
+### script in this repo, main.py takes care of this as well)
+
+### Application Setup Instructions -
+### 1. Install psycopg2 if not already installed using the command 'pip install psycopg2'
+### 2. Open main.py and modify the parameters as needed that will be used for connecting to the database
+###    - The variables can be found on lines 4 - 8
+###    - Parameters: dbname, user, password, host, port
+### 3. Run the program by executing main.py using the command 'python3 main.py'
+### 4. The program will first establish a connection to the specified database, then create and initialize a students table with the corresponding initial data from the assignment specification
+### 5. You will then be prompted with several options to choose from to interact with the database
+###    - These options correspond to the CRUD operations as defined in the assignment specification
+###        - i.e. getAllStudents(), addStudent(), updateStudentEmail(), deleteStudent()
