@@ -1,0 +1,11 @@
+Steven Hua
+101224771
+COMP 3005 B - Assignment 3 (Q1)
+
+Setup Instructions -
+1. Install psycopg2 if not already installed using the command 'pip install psycopg2'
+2. Open main.py and modify the parameters as needed that will be used for connecting to the database
+    - The variables can be found on lines 4 - 8
+    - Parameters: dbname, user, password, host, port
+3. Run the program by executing main.py using the command 'python3 main.py'
+4. You will be prompted with several options to choose from to interact with the database
