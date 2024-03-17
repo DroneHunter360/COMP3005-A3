@@ -2,6 +2,8 @@ Steven Hua
 101224771
 COMP 3005 B - Assignment 3 (Q1)
 
+Video Demo YouTube Link: https://youtu.be/fJGMGvJYS5s
+
 Setup Instructions -
 1. Install psycopg2 if not already installed using the command 'pip install psycopg2'
 2. Open main.py and modify the parameters as needed that will be used for connecting to the database
