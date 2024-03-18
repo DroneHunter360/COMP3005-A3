@@ -20,20 +20,31 @@ def getAllStudents():
 # Q2 - function that inserts a new student record into the students table
 def addStudent(first_name, last_name, email, enrollment_date):
     query = f"INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES ('{first_name}', '{last_name}', '{email}', '{enrollment_date}')"
-    cursor.execute(query)
-    conn.commit()
+    try:
+        cursor.execute(query)
+        conn.commit()
+    except:
+        print('ERROR: Could not insert new student record into students table')
 
 # Q3 - function that updates the email address for a student with the specified student_id
 def updateStudentEmail(student_id, new_email):
     query = f"UPDATE students SET email = '{new_email}' WHERE student_id = {student_id}"
-    cursor.execute(query)
-    conn.commit()
+    try:
+        cursor.execute(query)
+        conn.commit()
+    except psycopg2.errors.UniqueViolation as e:
+        print(f'ERROR! Could not complete email update: {e}')
+    except:
+        print('ERROR: Could not complete email update')
 
 # Q4 - function that deletes the record of the student with the specified student_id
 def deleteStudent(student_id):
     query = f'DELETE FROM students WHERE student_id = {student_id}'
-    cursor.execute(query)
-    conn.commit()
+    try:
+        cursor.execute(query)
+        conn.commit()
+    except:
+        print('ERROR: Could not delete student\'s record from the students table')
 
 def run():
     configure_table()
@@ -86,7 +97,7 @@ try:
     )
 except psycopg2.OperationalError as e:
     print(f'Error: {e}')
-    exit(1)
+    exit(1) # if we cannot even connect to the database, there's no point in proceeding with the rest of the application until the user fixes the connection parameters
 
 # create a cursor from the connection
 cursor = conn.cursor()
